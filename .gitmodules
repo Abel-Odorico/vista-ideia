@@ -1,3 +1,6 @@
 [submodule "kits/guney-motion-kit"]
 	path = kits/guney-motion-kit
 	url = https://github.com/GTAI-1/guney-motion-kit
+[submodule "kits/youtube-ai-motion-graphics"]
+	path = kits/youtube-ai-motion-graphics
+	url = https://github.com/sirioberati/YouTube-AI-Motion-Graphics

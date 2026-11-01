@@ -93,6 +93,23 @@ npm run new-video -- vista-ideia-intro
 
 Para atualizar o kit para a versão mais recente: `git submodule update --remote kits/guney-motion-kit`.
 
+### YouTube AI Motion Graphics (`kits/youtube-ai-motion-graphics`)
+Incluído como **submódulo** do repositório original [sirioberati/YouTube-AI-Motion-Graphics](https://github.com/sirioberati/YouTube-AI-Motion-Graphics) (TEIN AI), sob licença **MIT**.
+
+Biblioteca com **74 boards animados** em HTML + GSAP (1920×1080) para vídeos explicativos: diagramas, gráficos (slope, heatmap, matriz 2×2), linhas do tempo, cards de comparação, odômetro, lupa e mais. Inclui **todos os prompts** do fluxo, **três skills do Claude** (brief, sistema visual e sincronização), sincronização com a voz via **Whisper** e exportação quadro a quadro para MP4 com Chrome + FFmpeg.
+
+Os boards vêm num tema neutro de propósito: dá para aplicar a paleta navy/creme e a Montserrat da Vista Ideia mantendo layouts e animações.
+
+```bash
+# ver todos os boards no navegador
+open kits/youtube-ai-motion-graphics/boards/index.html
+
+# checar o que falta instalar
+bash kits/youtube-ai-motion-graphics/tools/setup-check.sh
+```
+
+> 🔄 Para atualizar todos os kits de uma vez: `git submodule update --remote`.
+
 ## 📁 Estrutura
 ```
 render.py            CLI principal
