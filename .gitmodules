@@ -1,0 +1,3 @@
+[submodule "kits/guney-motion-kit"]
+	path = kits/guney-motion-kit
+	url = https://github.com/GTAI-1/guney-motion-kit

@@ -67,6 +67,32 @@ python3 render.py projects/unboxing.json --preview  # + folha de contato com qua
 
 Para outra marca, rode `tools/extract_logo.py` na arte dela e aponte `brand.mark`/`brand.word` para os PNGs gerados.
 
+---
+
+## 🎞️ Kits externos
+
+### Guney Motion Kit (`kits/guney-motion-kit`)
+Incluído como **submódulo** do repositório original [GTAI-1/guney-motion-kit](https://github.com/GTAI-1/guney-motion-kit), sob licença **GPL-3.0** (os créditos e a licença ficam no próprio kit).
+
+Kit de motion graphics em HTML → vídeo via **HyperFrames** (HeyGen): fundo animado, textos grandes animados, cards 3D, janelas no estilo Claude com zoom, efeitos sonoros (`sfx/`), verificação de quadros e overlay para DaVinci Resolve.
+
+**Complementa o vitools:** o vitools faz vídeos a partir de **fotos** com a identidade da marca; o Guney Motion Kit faz **animações gráficas** (vinhetas, textos cinéticos, explicativos) e traz efeitos sonoros.
+
+```bash
+# clonar este repo já trazendo o kit
+git clone --recurse-submodules https://github.com/Abel-Odorico/vista-ideia.git
+
+# se já clonou sem ele
+git submodule update --init
+
+# usar o kit (requer Node 22+ e FFmpeg)
+cd kits/guney-motion-kit
+npm run setup
+npm run new-video -- vista-ideia-intro
+```
+
+Para atualizar o kit para a versão mais recente: `git submodule update --remote kits/guney-motion-kit`.
+
 ## 📁 Estrutura
 ```
 render.py            CLI principal
@@ -77,6 +103,7 @@ assets/fotos/        fotos do pedido
 assets/logo/         brand board + máscaras da logo
 scripts/             setup_fonts.sh
 output/              vídeo, capa e preview
+kits/                kits externos (submódulos)
 ```
 
 ## Observações
