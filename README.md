@@ -36,4 +36,4 @@ Para ajustar, edite no `render.py`: `TL` (tempos e cenas), `CAPS` (legendas) e `
 
 ## Observações
 - O vídeo é exportado **sem áudio**; a música entra direto no Instagram.
-- O repositório contém foto de cliente: mantenha **privado** e confirme a autorização de uso de imagem.
+- O repositório é público e contém foto de cliente usada com autorização de imagem.
