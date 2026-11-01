@@ -1,0 +1,42 @@
+{
+  "name": "Vista Ideia — Unboxing",
+  "output": "output/vista_ideia_unboxing.mp4",
+  "cover": { "path": "output/capa_reels.jpg", "at": 1.67 },
+  "size": [1080, 1920],
+  "fps": 30,
+  "duration": 19.0,
+
+  "brand": {
+    "primary": [12, 27, 54],
+    "secondary": [244, 239, 228],
+    "mark": "assets/logo/mark.png",
+    "word": "assets/logo/word.png",
+    "font_dir": "assets/fonts"
+  },
+
+  "intro": { "label": "UNBOXING", "curtain": 0.65 },
+  "outro": { "start": 15.6, "curtain": 0.6, "lines": ["Obrigado por escolher", "a Vista Ideia."] },
+
+  "transition": 0.3,
+  "shots": [
+    { "image": "assets/fotos/IMG_3239.jpeg", "start": 1.9,  "end": 4.1,  "zoom": [1.00, 1.14], "center": [[760, 1000], [560, 980]] },
+    { "image": "assets/fotos/IMG_3241.jpeg", "start": 3.8,  "end": 6.2,  "zoom": [1.10, 1.00], "center": [[540, 1080], [700, 1050]] },
+    { "image": "assets/fotos/IMG_3243.jpeg", "start": 5.9,  "end": 8.5,  "zoom": [1.05, 1.18], "center": [[1100, 1200], [1620, 1180]] },
+    { "image": "assets/fotos/IMG_3244.jpeg", "start": 8.2,  "end": 10.4, "zoom": [1.00, 1.14], "center": [[820, 1150], [1050, 980]] },
+    { "image": "assets/fotos/IMG_3246.jpeg", "start": 10.1, "end": 12.9, "zoom": [1.08, 1.00], "center": [[830, 1150], [860, 1250]] },
+    { "image": "assets/fotos/IMG_0567.jpeg", "start": 12.6, "end": 15.9, "zoom": [1.75, 1.00], "center": [[830, 840], [840, 1195]] }
+  ],
+
+  "flashes": [ { "at": 3.95, "width": 0.28, "strength": 0.55 } ],
+
+  "caption_total": "05",
+  "captions": [
+    { "num": "01", "text": "A chegada",          "start": 2.2,  "end": 5.9 },
+    { "num": "02", "text": "O cuidado",          "start": 6.2,  "end": 8.2, "y": 330 },
+    { "num": "03", "text": "Os detalhes",        "start": 8.5,  "end": 10.1 },
+    { "num": "04", "text": "A peça",             "start": 10.4, "end": 12.6 },
+    { "num": "05", "text": "Vestida de verdade", "start": 12.9, "end": 15.4 }
+  ],
+
+  "fx": { "grain": 0.035, "vignette": 110, "bottom_gradient": 120 }
+}
