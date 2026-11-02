@@ -110,6 +110,14 @@ bash kits/youtube-ai-motion-graphics/tools/setup-check.sh
 
 > 🔄 Para atualizar todos os kits de uma vez: `git submodule update --remote`.
 
+---
+
+## 📝 Conteúdo para Instagram
+| Arquivo | O que é |
+|---|---|
+| [`docs/carrossel-editorial.md`](docs/carrossel-editorial.md) | Padrão de carrossel editorial de 10 slides na identidade da marca, adaptado da Máquina de Conteúdo de Helio Arreche ([créditos](docs/referencias/maquina-de-conteudo/)) |
+| [`docs/grokbot/`](docs/grokbot/) | Base de conhecimento e instruções para dois bots de conteúdo: roteirista e diretor de arte |
+
 ## 📁 Estrutura
 ```
 render.py            CLI principal
@@ -121,6 +129,7 @@ assets/logo/         brand board + máscaras da logo
 scripts/             setup_fonts.sh
 output/              vídeo, capa e preview
 kits/                kits externos (submódulos)
+docs/                guias de conteúdo e material para bots
 ```
 
 ## Observações
