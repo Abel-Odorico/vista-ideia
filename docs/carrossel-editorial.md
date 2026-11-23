@@ -3,6 +3,8 @@
 Adaptado do guia de design editorial da **Máquina de Conteúdo**, de Helio Arreche
 ([original e créditos](referencias/maquina-de-conteudo/)), com a identidade da Vista Ideia.
 
+> Para gerar os PNGs a partir de um JSON: `python3 carrossel.py projects/carrossel-unboxing.json` (ver README).
+
 ## Princípio
 Cara de **revista impressa**: muito respiro, grid rígido, numeração de página e uma imagem forte por slide.
 Nada de cara de template: sem degradê, sem emoji, sem ícones genéricos.

@@ -1,0 +1,105 @@
+{
+  "nome": "Vista Ideia — O cuidado em cada camada",
+  "formato": "4:5",
+  "saida": "output/carrossel-unboxing",
+  "marca": {
+    "handle": "@vistaideia",
+    "navy": "#0C1B36",
+    "creme": "#F4EFE4",
+    "kraft": "#B8936A",
+    "mark": "assets/logo/mark.png",
+    "word": "assets/logo/word.png",
+    "fontes": "assets/fonts"
+  },
+  "slides": [
+    {
+      "tipo": "capa",
+      "chapeu": "O cuidado",
+      "titulo": "Cada detalhe da caixa foi pensado para você",
+      "apoio": "O que chega junto com a sua camiseta, camada por camada.",
+      "foto": "assets/fotos/IMG_3241.jpeg",
+      "foco": [
+        50,
+        62
+      ]
+    },
+    {
+      "tipo": "abertura",
+      "chapeu": "Abertura",
+      "titulo": "Receber também faz parte da escolha",
+      "texto": "Em um mundo de excessos, a gente acredita no valor das boas escolhas. Por isso abrir a caixa recebe o mesmo cuidado da peça: papel, cartão, barbante e uma mensagem escrita pela equipe.",
+      "foto": "assets/fotos/IMG_3243.jpeg",
+      "foco": [
+        50,
+        55
+      ]
+    },
+    {
+      "tipo": "dado",
+      "chapeu": "Em números",
+      "numero": "5",
+      "legenda": "camadas de cuidado até chegar à peça",
+      "apoio": "Caixa kraft, papel seda, cinta de papelão ondulado, cartão rosado e tag com barbante de juta."
+    },
+    {
+      "tipo": "contexto",
+      "chapeu": "A caixa",
+      "titulo": "Kraft por fora, surpresa por dentro",
+      "apoio": "A caixa leva o símbolo Vi em preto. Ao abrir, tudo aparece no lugar: a peça enrolada, o cartão e a tag.",
+      "foto": "assets/fotos/IMG_3239.jpeg",
+      "foco": [
+        45,
+        55
+      ]
+    },
+    {
+      "tipo": "citacao",
+      "chapeu": "No que acreditamos",
+      "frase": "Em um mundo de excessos, o valor das boas escolhas.",
+      "fonte": "Essência da Vista Ideia"
+    },
+    {
+      "tipo": "comparativo",
+      "chapeu": "Menos e melhor",
+      "titulo": "O que fica depois de abrir",
+      "esquerda": {
+        "rotulo": "Excesso",
+        "texto": "Embalagem que vai direto para o lixo."
+      },
+      "direita": {
+        "rotulo": "Boa escolha",
+        "texto": "Papel, barbante e um cartão que dá vontade de guardar."
+      }
+    },
+    {
+      "tipo": "detalhe",
+      "chapeu": "Os detalhes",
+      "frase": "A tag de papel artesanal vem amarrada com barbante de juta.",
+      "foto": "assets/fotos/IMG_3244.jpeg",
+      "foco": [
+        62,
+        40
+      ]
+    },
+    {
+      "tipo": "lista",
+      "chapeu": "A peça",
+      "titulo": "O que cada camiseta carrega",
+      "itens": [
+        "Conforto para vestir sempre",
+        "Simplicidade no corte e na cor",
+        "Uma frase com significado"
+      ]
+    },
+    {
+      "tipo": "sintese",
+      "chapeu": "Síntese",
+      "frase": "Que cada camiseta faça parte de momentos que mereçam ser lembrados."
+    },
+    {
+      "tipo": "fecho",
+      "chapeu": "Até a próxima",
+      "pergunta": "qual frase você vestiria hoje?"
+    }
+  ]
+}
