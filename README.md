@@ -112,6 +112,41 @@ bash kits/youtube-ai-motion-graphics/tools/setup-check.sh
 
 ---
 
+## 🖼️ Carrossel do Instagram (`carrossel.py`)
+Gera o carrossel editorial de 10 slides (4:5) a partir de um JSON, no padrão de
+[`docs/carrossel-editorial.md`](docs/carrossel-editorial.md): grid de revista, Montserrat, navy/creme e um destaque kraft.
+Arquitetura inspirada no [Open Carrusel](https://github.com/Hainrixz/open-carrusel) de Enrique Rocha (MIT, [créditos](docs/referencias/open-carrusel/CREDITOS.md)).
+
+![grade do carrossel](output/carrossel-unboxing/grade.jpg)
+
+```bash
+python3 carrossel.py projects/carrossel-unboxing.json             # confere, gera os PNGs e a grade
+python3 carrossel.py projects/carrossel-unboxing.json --conferir  # só as regras de texto
+python3 carrossel.py projects/carrossel-unboxing.json --zonas     # + mapa do que o app corta
+python3 carrossel.py projects/carrossel-unboxing.json --html      # só o HTML, para abrir no navegador
+python3 -m pytest tests/                                          # testes
+```
+
+Requer as fontes (`./scripts/setup_fonts.sh`) e o Google Chrome (ou `CHROME_PATH`). Sai em `output/<projeto>/`:
+`slide-01.png` … `slide-10.png` em 1080 × 1350, `grade.jpg` para revisar de relance e `html/` com cada slide autossuficiente.
+
+| Tipo | Campos | Layout |
+|---|---|---|
+| `capa` | `titulo`, `apoio`, `foto` | manchete, fio kraft curto, foto forte |
+| `abertura` | `titulo`, `texto` (até 60 palavras), `foto` opcional | duas colunas com capitular |
+| `dado` | `numero`, `legenda`, `apoio` | número gigante em kraft |
+| `contexto` | `titulo`, `apoio`, `foto` | foto 58% à esquerda |
+| `citacao` | `frase`, `fonte` (obrigatória: sem fonte real, use `dado`) | aspas grandes |
+| `comparativo` | `titulo`, `esquerda`/`direita` com `rotulo` e `texto` | duas colunas com fio |
+| `detalhe` | `foto`, `frase` | close com uma frase |
+| `lista` | `titulo`, `itens` (3) | numerais grandes |
+| `sintese` | `frase` | fundo navy |
+| `fecho` | `pergunta`, `titulo` opcional | salvar + comenta + @ + logo |
+
+Todo slide aceita `chapeu`; foto aceita `foco: [x%, y%]`; títulos grandes aceitam `tamanho` (px).
+**O que é conferido antes de renderizar:** chapéu até 3 palavras, título até 9, apoio até 25, no máximo 10 slides,
+sem emoji, citação só com fonte, foto existente. **Depois:** se algum texto passou da caixa (o comando falha e diz o slide).
+
 ## 📝 Conteúdo para Instagram
 | Arquivo | O que é |
 |---|---|
@@ -120,8 +155,11 @@ bash kits/youtube-ai-motion-graphics/tools/setup-check.sh
 
 ## 📁 Estrutura
 ```
-render.py            CLI principal
+render.py            CLI principal (vídeo)
+carrossel.py         CLI do carrossel do Instagram
 vitools/             motor (core, shot, brand, fx, engine)
+vitools/carrossel/   carrossel: regras, página, layouts, exportação
+tests/               testes (python3 -m pytest tests/)
 tools/               extract_logo.py, contact_sheet.py
 projects/            projetos de vídeo em JSON
 assets/fotos/        fotos do pedido
