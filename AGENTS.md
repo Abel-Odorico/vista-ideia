@@ -22,8 +22,10 @@ python3 tools/teste_ritmo_humano.py                         # teste das ferramen
 python3 regras/conferir_regras.py --contra ../grokbot-video-playbook/regras/RITMO-HUMANO.md
 ```
 
-Medido em 25/11/2026: o reel de unboxing dá 41 arrancadas por minuto (meta das regras: até 22). Reel de 19 s tem
-ritmo próprio; antes de mudar o projeto, decidir com o Abel se a meta vale para reel.
+Medido em 25/11/2026: o reel de unboxing de 19 s dava 41 arrancadas por minuto. Em 26/11/2026 o Abel decidiu que a
+meta de até 22 vale também para reel: o `projects/unboxing.json` passou a 25 s, com foto em velocidade constante
+(`"shot_easing": "linear"`), legenda trocando junto com a foto, sem flash e contador da legenda em 32 px. Mede 19,2
+arrancadas por minuto, 84% em cruzeiro. O original fica em `projects/unboxing-19s.json` (renderiza igual ao de antes).
 
 ## Como uma regra nova entra
 

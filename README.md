@@ -65,7 +65,9 @@ python3 render.py projects/unboxing.json --preview  # + folha de contato com qua
 | `intro.label` / `outro.lines` | Textos das cartelas |
 | `shots[]` | `image`, `start`/`end` (s), `zoom` [início, fim], `center` [[x,y] início, [x,y] fim] em pixels da foto original |
 | `captions[]` | `num`, `text`, `start`/`end` e `y` opcional (padrão 1290; use ~330 para o topo) |
-| `flashes[]` | `at` (s), `width`, `strength` |
+| `shot_easing` | `linear` (velocidade constante, padrão do ritmo humano) ou `in_out` (acelera no meio); também por foto em `shots[].easing` |
+| `caption_counter_px` | altura do contador "01 / 05" (padrão 32 px) |
+| `flashes[]` | `at` (s), `width`, `strength` (o reel de ritmo humano não usa) |
 | `fx` | Intensidade de `grain`, `vignette` e `bottom_gradient` |
 
 > 💡 Shots consecutivos se sobrepõem ~0,3s; é nessa sobreposição que o crossfade acontece.

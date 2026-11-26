@@ -17,14 +17,16 @@ def render_project(cfg, root=".", preview_frames=None, log=print):
     P = lambda p: os.path.join(root, p)
     brand = Brand(cfg["brand"], (W, H), root)
     shots = [(Shot(P(s["image"]), (W, H), tuple(s.get("zoom", (1, 1.1))),
-                   [tuple(c) for c in s["center"]] if "center" in s else None),
+                   [tuple(c) for c in s["center"]] if "center" in s else None,
+                   s.get("easing", cfg.get("shot_easing", "in_out"))),
               s["start"], s["end"]) for s in cfg["shots"]]
     first_start, last_end = shots[0][1], shots[-1][2]
     XF = cfg.get("transition", 0.3)
 
     caps_cfg = cfg.get("captions", [])
     total = cfg.get("caption_total", f"{len(caps_cfg):02d}")
-    caps = [(brand.caption(c["num"], total, c["text"], c.get("y", 1290)), c["start"], c["end"]) for c in caps_cfg]
+    cpx = cfg.get("caption_counter_px", 32)
+    caps = [(brand.caption(c["num"], total, c["text"], c.get("y", 1290), cpx), c["start"], c["end"]) for c in caps_cfg]
 
     fxc = cfg.get("fx", {})
     GRAD = fx.bottom_gradient(W, H, fxc.get("bottom_gradient", 120))
