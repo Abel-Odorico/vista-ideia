@@ -1,20 +1,23 @@
 """Shot: foto com movimento Ken Burns (zoom + pan) em precisão subpixel."""
 from PIL import Image
-from .core import ease_in_out
+from .core import ease_in_out, clamp
 
 
 class Shot:
-    def __init__(self, path, size, zoom=(1.0, 1.1), center=None):
+    def __init__(self, path, size, zoom=(1.0, 1.1), center=None, easing="in_out"):
         self.im = Image.open(path).convert("RGB")
         self.W, self.H = size
         self.k = max(self.W / self.im.width, self.H / self.im.height)
         self.z0, self.z1 = zoom
         mid = (self.im.width / 2, self.im.height / 2)
         self.c0, self.c1 = center if center else (mid, mid)
+        # "linear": velocidade constante do começo ao fim (RH-01: movimento de cruzeiro, sem arranco no meio da foto);
+        # "in_out": começa e termina devagar e acelera no meio (o reel de 19 s usa este)
+        self.easing = easing
 
     def frame(self, t):
         """t de 0 a 1 ao longo da duração do shot."""
-        e = ease_in_out(t)
+        e = clamp(t) if self.easing == "linear" else ease_in_out(t)
         z = self.z0 + (self.z1 - self.z0) * e
         cx = self.c0[0] + (self.c1[0] - self.c0[0]) * e
         cy = self.c0[1] + (self.c1[1] - self.c0[1]) * e

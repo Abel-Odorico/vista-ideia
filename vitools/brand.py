@@ -61,16 +61,20 @@ class Brand:
         return self._card(t, self.primary, self.secondary, 440, 0.2,
                           lines, self.f("Light", 40), 55, 110, 3)
 
-    def caption(self, num, total, text, y0=1290):
-        """Legenda em chip arredondado, legível sobre qualquer foto."""
+    def caption(self, num, total, text, y0=1290, counter_px=32):
+        """Legenda em chip arredondado, legível sobre qualquer foto.
+
+        counter_px: altura do contador "01 / 05". Padrão 32 px (RH-07, mínimo de rótulo pensando no celular,
+        decidido pelo Abel em 26/11/2026); o reel antigo usava 24 (projects/unboxing-19s.json guarda o original)."""
         W, H = self.W, self.H
         lay = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(lay)
-        fb, fs = self.f("Medium", 56), self.f("SemiBold", 24)
-        cw = int(max(text_width(d, text, fb, 3), 180) + 120); ch = 170; x0 = (W - cw) // 2
+        fb, fs = self.f("Medium", 56), self.f("SemiBold", counter_px)
+        extra = counter_px - 24
+        cw = int(max(text_width(d, text, fb, 3), 180) + 120); ch = 170 + extra; x0 = (W - cw) // 2
         sh = Image.new("RGBA", (W, H), (0, 0, 0, 0))
         ImageDraw.Draw(sh).rounded_rectangle([x0, y0 + 12, x0 + cw, y0 + ch + 12], radius=34, fill=(0, 0, 0, 110))
         lay.alpha_composite(sh.filter(ImageFilter.GaussianBlur(18)))
         d.rounded_rectangle([x0, y0, x0 + cw, y0 + ch], radius=34, fill=self.secondary + (246,))
         tracked(d, (W / 2, y0 + 30), f"{num}  /  {total}", fs, self.primary + (150,), 9)
-        tracked(d, (W / 2, y0 + 66), text, fb, self.primary + (255,), 3)
+        tracked(d, (W / 2, y0 + 66 + extra), text, fb, self.primary + (255,), 3)
         return lay
