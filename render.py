@@ -3,6 +3,9 @@
 
     python3 render.py projects/unboxing.json
     python3 render.py projects/unboxing.json --preview   # também gera folha de contato
+
+Antes de renderizar, confere o projeto contra regras/RITMO-HUMANO.md (tools/checar_ritmo.py, só avisa).
+Depois, medir o MP4: python3 tools/ritmo_humano.py output/<video>.mp4
 """
 import argparse, os, sys
 from vitools import load_project, render_project
@@ -14,6 +17,10 @@ a = ap.parse_args()
 
 root = os.path.dirname(os.path.abspath(__file__))
 cfg = load_project(a.project)
+
+# ritmo humano (regras/RITMO-HUMANO.md): avisa antes de renderizar, não bloqueia
+import subprocess
+subprocess.run([sys.executable, os.path.join(root, "tools", "checar_ritmo.py"), a.project])
 if not os.path.isdir(os.path.join(root, cfg["brand"].get("font_dir", "assets/fonts"))):
     sys.exit("Fontes não encontradas. Rode antes: ./scripts/setup_fonts.sh")
 

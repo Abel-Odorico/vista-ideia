@@ -20,6 +20,8 @@ e o **vitools**, kit em Python que gera esse tipo de vídeo a partir de fotos, l
 
 ---
 
+**Regras para qualquer IA:** [AGENTS.md](AGENTS.md) e [regras/RITMO-HUMANO.md](regras/RITMO-HUMANO.md) (ritmo humano, com data e origem de cada regra).
+
 ## 🧰 vitools
 
 ### Instalação
@@ -38,6 +40,9 @@ python3 render.py projects/unboxing.json --preview  # + folha de contato com qua
 ### Ferramentas
 | Comando | O que faz |
 |---|---|
+| `tools/checar_ritmo.py <projeto.json>` | Confere o projeto contra as regras de ritmo humano (`regras/RITMO-HUMANO.md`) antes do render: tempo de leitura das legendas, tempo de cada foto, tipos de transição |
+| `tools/ritmo_humano.py <video.mp4>` | Mede o MP4 final: arrancadas por minuto, dado parado, respiro, música abaixo da voz |
+| `tools/revisor_cego.py --anterior A.mp4 --novo B.mp4` | 2 juízes de IA comparam as versões sem saber qual é qual e só pedem ajuste em erro grave |
 | `render.py <projeto.json>` | Renderiza o vídeo a partir do JSON |
 | `tools/extract_logo.py <arte> --box x0 y0 x1 y1` | Recorta a logo de uma arte e gera as máscaras `mark.png` (símbolo) e `word.png` (assinatura), recoloríveis |
 | `tools/contact_sheet.py <video.mp4> -n 8` | Gera uma folha de contato para revisar qualquer vídeo |
